@@ -1,1 +1,4 @@
-print("hello world")
+#1st python program
+a="hello world"
+print(a)
+

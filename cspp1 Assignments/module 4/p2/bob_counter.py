@@ -15,5 +15,4 @@ def main():
             count += 1
         i += 1
     print(count)
-		
 main()

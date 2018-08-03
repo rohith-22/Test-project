@@ -7,7 +7,7 @@
 # Input: 21950
 # Output: 21950 is not a perfect cube"""
 def main():
-    var_s = int(input("number ="))
+    var_s = int(input())
     var_i = 0
     while var_i ** 3 < var_s:
         var_i += 1

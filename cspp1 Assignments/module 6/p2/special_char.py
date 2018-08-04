@@ -8,7 +8,7 @@ def main():
     z_str = ""
     for char in s_str:
         if char in "!@#$%^&*":
-            z_str +=" "
+            z_str += " "
         else:
             z_str += char
     print(z_str)

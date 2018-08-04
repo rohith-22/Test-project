@@ -12,6 +12,5 @@ def main():
         else:
             z_str += char
     print(z_str)
-
 if __name__ == "__main__":
     main()

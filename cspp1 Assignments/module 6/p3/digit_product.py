@@ -5,7 +5,6 @@ example:
 	output: 6
 '''
 def main():
-    
     int_input = int(input())
     str_i = str(int_input)
     product = 1

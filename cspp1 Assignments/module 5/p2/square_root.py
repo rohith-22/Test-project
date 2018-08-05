@@ -1,15 +1,15 @@
-# Write a python program to find the square root of the given number 
+# Write a python program to find the square root of the given number
 # using approximation method
 def main():
-    VAR_EPSILON = 0.01
-    VAR_STEP = 0.1
-    VAR_SQUARE = int(input())
-    VAR_GUESS = 0.0
-    while VAR_GUESS <= VAR_SQUARE:
-        if abs(VAR_GUESS**2-VAR_SQUARE) < VAR_EPSILON:
+    var_epsilon = 0.01
+    var_step = 0.1
+    var_square = int(input())
+    var_guess = 0.0
+    while var_guess <= var_square:
+        if abs(var_guess**2-var_square) < var_epsilon:
             break
         else:
-            VAR_GUESS += VAR_STEP
-    print(str(VAR_GUESS))
-if __name__== "__main__":
-	main()
+            var_guess += var_step
+    print(str(var_guess))
+if __name__ == "__main__":
+    main()

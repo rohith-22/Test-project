@@ -21,5 +21,5 @@ def main():
         print(fourthPower(int(float(str(data)))))
     else:
         print(fourthPower(data))
-if __name__== "__main__":
+if __name__ == "__main__":
     main()

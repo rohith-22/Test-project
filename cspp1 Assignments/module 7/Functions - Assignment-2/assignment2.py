@@ -23,14 +23,27 @@
 
 
 
-def payingDebtOffInAYear(balance, annualInterestRate):
-	
-
+def paying_debtoffinayear(bal_ance, annualinterest_rate):
+   """defining paying function"""
+   var_bal = bal_ance
+   var_pay = 0
+   while True:
+       i = 12
+       var_bal = bal_ance
+       while i != 0:
+           var_ubal = var_bal - var_pay
+           var_bal = var_ubal + ((annualinterest_rate / 12.0) * var_ubal)
+           i -= 1
+       if var_bal > 0:
+           var_pay += 10
+       else:
+           break
+   return var_pay
 def main():
-	data = input()
-	data = data.split(' ')
-	data = list(map(float, data))
-	print(payingDebtOffInAYear(data[0],data[1]))
-	
-if __name__== "__main__":
-	main()
+   """ main"""
+   data = input()
+   data = data.split(' ')
+   data = list(map(float, data))
+   print("Lowest Payment: " + str(paying_debtoffinayear(data[0], data[1])))
+if __name__ == "__main__":
+   main()

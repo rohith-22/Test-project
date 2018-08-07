@@ -9,8 +9,6 @@ def var_iterpower(var_base, var_exp):
     returns: int or float, var_base^var_exp
     '''
     var_p = 1
-    if var_exp == 0:
-        return 1
     while var_exp > 0:
         var_p = var_p * var_base
         var_exp -= 1

@@ -1,7 +1,7 @@
-# Exercise: Assignment-2
+"""# Exercise: Assignment-2
 # Write a Python function, sumofdigits,
 #that takes in one number and returns the sum of digits of given number.
-# This function takes in one number and returns one number.
+# This function takes in one number and returns one number."""
 def sumof_digits(var_p):
     '''
     n is positive Integer

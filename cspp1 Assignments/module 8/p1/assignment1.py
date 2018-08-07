@@ -7,6 +7,8 @@ def factorial(n_um):
     n is positive Integer
     returns: a positive integer, the factorial of n.
     '''
+    if n_um == 0:
+        return 1
     if n_um == 1:
         return 1
     return n_um * factorial(n_um - 1)

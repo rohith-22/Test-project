@@ -38,6 +38,6 @@ def main():
     for j in range(1, len(data)):
         list1.append(data[j][0])
     print(is_word_guessed(s_ecret_word, list1))
-
 if __name__ == "__main__":
     main()
+    

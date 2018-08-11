@@ -45,8 +45,8 @@ def create_social_network(data):
             var_c = var_b
         if var_b[0] not in s_dict:
             s_dict[var_b[0]] = var_c
-        else:
-            s_dict[var_b[0]].append(var_c)
+        #elif var_b[0] not in s_dict[var_b[0]]:
+         #   s_dict[var_b[0]].append(var_c)
     return(s_dict)
 def main():
     '''

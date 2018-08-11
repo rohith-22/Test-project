@@ -38,7 +38,7 @@ def create_social_network(data):
     # print()
     s_dict = {}
     for i in range(len(var_a)):
-        if 'follows' in var_a:
+        if 'follows' in a[i]:
             var_b = var_a[i].split(' follows ')
             var_c = var_b[1].split(',')
             if var_b[0] not in s_dict:
@@ -46,7 +46,7 @@ def create_social_network(data):
             elif var_b[0] not in s_dict[var_b[0]]:
                 s_dict[var_b[0]].append(var_c)
         else:
-            s_dict = {}
+            s_dict ={}
     return(s_dict)
 def main():
     '''

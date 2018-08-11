@@ -14,7 +14,7 @@ def follow(network, arg1, arg2):
         update the network dictionary and return it
     '''
     # remove the pass below and start writing your code
-    if arg2 not in network(arg1):
+    if arg2 not in network[arg1]:
         arg1.append(arg2)
     return arg1
 def unfollow(network, arg1, arg2):
@@ -27,7 +27,7 @@ def unfollow(network, arg1, arg2):
         update the network dictionary and return it
     '''
     # remove the pass below and start writing your code
-    if arg2 in network(arg1):
+    if arg2 in network[arg1]:
         arg1.delet(arg2)
     return arg1
 
@@ -44,7 +44,7 @@ def delete_person(network, arg1):
     # remove the pass below and start writing your code
     if arg1 in network:
         network.delet(arg1)
-    return arg1
+    return network
 def main():
     '''
         handling testcase input and printing output

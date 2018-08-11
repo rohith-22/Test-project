@@ -41,7 +41,7 @@ def create_social_network(data):
         var_b = var_a[i].split(' follows ')
         if len(var_b) >= 2:
             var_c = var_b[1].split(',')
-        else :
+        else:
             var_c = var_b
         if var_b[0] not in s_dict:
             s_dict[var_b[0]] = var_c

@@ -14,6 +14,8 @@ def follow(network, arg1, arg2):
         update the network dictionary and return it
     '''
     # remove the pass below and start writing your code
+    if arg1 not in network:
+        network[arg1] = [arg2]
     if arg1  in network:
         network[arg1].append(arg2)
     return network
@@ -42,8 +44,7 @@ def delete_person(network, arg1):
         update the network dictionary and return it
     '''
     # remove the pass below and start writing your code
-    if arg1 not in network:
-        network[arg1] = [arg2]
+
     if arg1 in network:
         del network[arg1]
     return network

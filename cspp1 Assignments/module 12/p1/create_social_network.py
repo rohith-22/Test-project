@@ -39,7 +39,7 @@ def create_social_network(data):
     s_dict = {}
     for i in range(len(var_a)):
         var_b = var_a[i].split(' follows ')
-        if len(var_b[1]) >= 2:
+        if len(var_b[1]) > 1:
             var_c = var_b[1].split(',')
         else:
             var_c = var_b

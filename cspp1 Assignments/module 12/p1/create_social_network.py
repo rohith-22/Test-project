@@ -37,7 +37,7 @@ def create_social_network(data):
     # print(var_a)
     # print()
     s_dict = {}
-    for i in enumerate(var_a):
+    for i in range(len(var_a)):
         if 'follows' in var_a[i]:
             var_b = var_a[i].split(' follows ')
             var_c = var_b[1].split(',')

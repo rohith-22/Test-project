@@ -15,8 +15,8 @@ def follow(network, arg1, arg2):
     '''
     # remove the pass below and start writing your code
     if arg2 not in network[arg1]:
-        arg1.append(arg2)
-    return arg1
+        network[arg1].append(arg2)
+    return network
 def unfollow(network, arg1, arg2):
     '''
         3 arguments are passed to this function
@@ -28,8 +28,8 @@ def unfollow(network, arg1, arg2):
     '''
     # remove the pass below and start writing your code
     if arg2 in network[arg1]:
-        arg1.delet(arg2)
-    return arg1
+        network[arg1].delet(arg2)
+    return network
 
 def delete_person(network, arg1):
     '''

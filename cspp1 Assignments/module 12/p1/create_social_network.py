@@ -35,6 +35,7 @@ def create_social_network(data):
     # remove the pass below and start writing your code
     var_a = data.splitlines()
     print(var_a)
+    print()
     s_dict = {}
     for i in range(len(var_a)):
         var_b = var_a[i].split(' follows ')

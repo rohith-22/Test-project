@@ -19,7 +19,6 @@ def is_straight(hand):
     temp_hand = []
     for i in range(len(hand)):
         temp_hand.append(hand[i][:1])
-    
     for i in range(len(temp_hand)):
         if temp_hand[i] == 'K':
             temp_hand[i] = '13'
@@ -57,8 +56,6 @@ def is_flush(hand):
     if var_count == 5:
         return True
     return False
-    
-
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to

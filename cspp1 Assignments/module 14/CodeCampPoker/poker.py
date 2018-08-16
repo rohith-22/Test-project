@@ -4,7 +4,7 @@
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
 def is_fourofakind(hand):
-
+    """ four of a kind"""
     face_values = get_onlyfacevalues(hand)
 
     for each_face in face_values:
@@ -14,6 +14,7 @@ def is_fourofakind(hand):
     return False
 
 def is_fullhouse(hand):
+    """full house """
     face_values = get_onlyfacevalues(hand)
 
     if (face_values.count(face_values[0]) == 3 and face_values.count(face_values[len(face_values)-1]) == 2) or (face_values.count(face_values[0]) == 2 and face_values.count(face_values[len(face_values)-1]) == 3):
@@ -22,6 +23,7 @@ def is_fullhouse(hand):
     return False
 
 def is_threeofakind(hand):
+    """ three of a kind"""
     face_list = get_onlyfacevalues(hand)
 
     if len(set(face_list)) == 3:
@@ -32,6 +34,7 @@ def is_threeofakind(hand):
     return False
 
 def is_twopair(hand):
+    """two pair"""
     face_list = get_onlyfacevalues(hand)
     if len(set(face_list)) == 3:
         count = 0
@@ -44,6 +47,7 @@ def is_twopair(hand):
     return False
 
 def is_onepair(hand):
+    """ one pair"""
     face_list = get_onlyfacevalues(hand)
     if len(set(face_list)) == 4:
         count = 0
@@ -56,9 +60,11 @@ def is_onepair(hand):
     return False
 
 def is_highcard(hand):
+    """ high card"""
     return len(set(get_onlyfacevalues(hand))) == 5
 
 def get_onlyfacevalues(hand):
+    """ finding face values"""
     face_values = []
     index_str = '--23456789TJQKA'
     for c, s in hand:
@@ -67,6 +73,7 @@ def get_onlyfacevalues(hand):
     return sorted(face_values)
 
 def get_handrank(hand, size):
+    """ to get hand rank"""
     face_values = get_onlyfacevalues(hand)
 
     if size == 1:
@@ -79,6 +86,7 @@ def get_handrank(hand, size):
     return 0
 
 def get_suitrank(hand):
+    """ to get suit rank"""
     face_values = get_onlyfacevalues(hand)
     return 1/100 * sum(face_values)
 

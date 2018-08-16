@@ -3,6 +3,34 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
+def is_any_of_a_kind(hand):
+    hand_dict = {}
+    for i in range(len(hand)):
+        if hand[i][0] in dhand_dict:
+            dhand_dict[hand[i][0]] +=1
+        else:
+            dhand_dict[hand[i][0]] = 1
+    return dhand_dict
+def is_fourofakind(hand):
+    dict_four = {}
+    dict_four = is_any_of_a_kind(hand)
+    return len(dict_four) == 2 and 1 in dict_four.values() and 4 in dict_four.values()
+def is_fullhouse(hand):
+    dict_full = {}
+    dict_full = is_any_of_a_kind(hand)
+    return len(dict_full) == 2 and 2 in dict_full.values() and 3 in dict_full.values()
+def is_threeofakind(hand):
+    dict_three = {}
+    dict_three = is_any_of_a_kind(hand)
+    return len(dict_three) == 3 and 3 in dict_three.values() 
+def is_twopair(hand):
+    dict_twopair = {}
+    dict_twopair = is_any_of_a_kind(hand)
+    return len(dict_twopair) == 3 and 2 in dict_twopair.values()
+def is_onepair(hand):
+    dict_onepair = {}
+    dict_onepair = is_any_of_a_kind(hand)
+    return len(dict_onepair) == 4 and 2 in dict_onepair.values()
 
 def is_straight(hand):
     '''
@@ -81,12 +109,22 @@ def hand_rank(hand):
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
     if is_straight(hand) and is_flush(hand):
-        return 3
+        return 9
+    if is_fourofakind(hand):
+        return 8
+    if is_fullhouse(hand):
+        return 7
     if is_flush(hand):
-        return 2
+        return 6
     if is_straight(hand):
-        return 1
-    return 0
+        return 5
+    if is_threeofakind(hand):
+        return 4
+    if is_twopair(hand):
+        return 3
+    if is_onepair(hand):
+        return 2
+    return 1
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.

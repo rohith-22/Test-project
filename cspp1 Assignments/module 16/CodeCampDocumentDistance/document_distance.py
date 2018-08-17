@@ -7,7 +7,7 @@ import re
 import math
 
 def clean_up(data):
-    """"""
+    """ """
     data = data.lower()
     data_list = data.split(" ")
     count = 0
@@ -18,7 +18,7 @@ def clean_up(data):
     return data_list
 
 def remove_stop_words(word_list):
-    """"""
+    """ """
     stop_words = load_stopwords("stopwords.txt")
 
     temp_word_list = word_list[:]
@@ -30,7 +30,7 @@ def remove_stop_words(word_list):
     return word_list
 
 def get_frequencydictionary(word_list_1, word_list_2):
-    """"""
+    """ """
     freq_dict = {}
 
     for each_word in word_list_1:
@@ -55,7 +55,7 @@ def get_frequencydictionary(word_list_1, word_list_2):
     return freq_dict
 
 def compute_similarity(freq_dict):
-    """"""
+    """ """
     numerator = 0
     den_one = 0
     den_two = 0

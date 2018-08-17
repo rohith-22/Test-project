@@ -1,9 +1,85 @@
+
+
 '''
     Document Distance - A detailed description is given in the PDF
 '''
 import re
 import math
-filename ="/Users/rohithkumar/Desktop/git/cspp1/Test-project/cspp1 Assignments/module 16/CodeCampDocumentDistance/stopwords.txt"
+
+def clean_up(data):
+    data = data.lower()
+    data_list = data.split(" ")
+    count = 0
+    while count < len(data_list):
+        data_list[count] = re.sub("[^a-z]","",data_list[count])
+        count += 1
+
+    return data_list
+
+def remove_stop_words(word_list):
+    stop_words = load_stopwords("stopwords.txt")
+
+    temp_word_list = word_list[:]
+
+    for each_word in temp_word_list:
+        if each_word in stop_words:
+            word_list.remove(each_word)
+
+    return word_list
+
+def get_frequencydictionary(word_list_1, word_list_2):
+    freq_dict = {}
+
+    for each_word in word_list_1:
+        if len(each_word) > 0:
+            if each_word not in freq_dict:
+                freq_dict[each_word] = [1, 0]
+            else:
+                freq_dict[each_word][0] += 1
+        else:
+            print("Single Char Word 1:", len(each_word), ":END")
+
+    #print(word_list_2)
+    for each_word in word_list_2:
+        if len(each_word) > 0:
+            if each_word not in freq_dict:
+                freq_dict[each_word] = [0, 1]
+            else:
+                freq_dict[each_word][1] += 1
+        else:
+            print("Single Char Word 2:", len(each_word), ":END")
+
+    return freq_dict
+
+def compute_similarity(freq_dict):
+    numerator = 0
+    den_one = 0
+    den_two = 0
+    for each_word in freq_dict:
+        freq_list = freq_dict[each_word]
+        numerator += (freq_list[0] * freq_list[1])
+        den_one += freq_list[0] ** 2
+        den_two += freq_list[1] ** 2
+
+    denominator = math.sqrt(den_one) * math.sqrt(den_two)
+
+    return numerator/denominator
+
+def similarity(d1, d2):
+    '''
+        Compute the document distance as given in the PDF
+    '''
+
+    d1_list = clean_up(d1)
+    d2_list = clean_up(d2)
+
+    d1_list = remove_stop_words(d1_list)
+    d2_list = remove_stop_words(d2_list)
+
+    freq_dict = get_frequencydictionary(d1_list, d2_list)
+
+    return compute_similarity(freq_dict)
+
 def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
@@ -13,68 +89,6 @@ def load_stopwords(filename):
         for line in filename:
             stopwords[line.strip()] = 0
     return stopwords
-def word_list(input):
-    stop_words = load_stopwords(filename)
-    lower_case = input.lower()
-    # clean_up = re.sub("[^a-z]", "",lower_case)
-    #strip_input = clean_up.strip()
-    list_words = lower_case.split(' ')
-    for each_word in range(len(list_words)):
-        list_words[each_word] = re.sub("[^a-z]", "",list_words[each_word])
-
-
-    list_copy = list_words.copy()
-    for each_word in list_copy:
-        if each_word in stop_words:
-            list_words.remove(each_word)
-    return list_words
-# input1 = input()
-# print(word_list(input1))
-
-def word_dict(input):
-    a_dict ={}
-    input_word_list = word_list(input)
-    for each_word in input_word_list:
-        if each_word in a_dict:
-            a_dict[each_word] +=1
-        else:
-            a_dict[each_word] = 1
-    return a_dict
-# input1 = input()
-# print(word_dict(input1))
-def similarity(dict1, dict2):
-    '''
-        Compute the document distance as given in the PDF
-    '''
-    dictionary_1 = word_dict(dict1)
-    #print(dictionary_1)
-    dictionary_2 = word_dict(dict2)
-    dict_3 = {}
-    numerator = 0
-    sum_1 = 0
-    sum_2 = 0
-    for each_word in dictionary_1:
-        if each_word not in dict_3:
-            dictionary_2[each_word] = 0
-        if each_word not in dict_3:
-            dict_3[each_word] = [dictionary_1[each_word], dictionary_2[each_word]]
-    for each_word in dictionary_2:
-        if each_word not in dict_3:
-            dictionary_1[each_word] = 0
-        if each_word not in dict_3:
-            dict_3[each_word] = [dictionary_1[each_word], dictionary_2[each_word]]
-    for each_word in dict_3:
-        numerator += dict_3[each_word][0] * dict_3[each_word][1]
-
-        sum_1 += (dict_3[each_word][0]) ** 2
-        sum_2 += (dict_3[each_word][1]) ** 2
-
-    denominator = (math.sqrt(sum_1)) * (math.sqrt(sum_2))
-
-    return (numerator/denominator)
-
-# input1 = input()
-# print(similarity(input1))
 
 def main():
     '''
@@ -82,7 +96,6 @@ def main():
     '''
     input1 = input()
     input2 = input()
-
     print(similarity(input1, input2))
 
 if __name__ == '__main__':

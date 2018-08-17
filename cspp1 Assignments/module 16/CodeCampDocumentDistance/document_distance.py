@@ -7,16 +7,18 @@ import re
 import math
 
 def clean_up(data):
+    """"""
     data = data.lower()
     data_list = data.split(" ")
     count = 0
     while count < len(data_list):
-        data_list[count] = re.sub("[^a-z]","",data_list[count])
+        data_list[count] = re.sub("[^a-z]", "", data_list[count])
         count += 1
 
     return data_list
 
 def remove_stop_words(word_list):
+    """"""
     stop_words = load_stopwords("stopwords.txt")
 
     temp_word_list = word_list[:]
@@ -28,6 +30,7 @@ def remove_stop_words(word_list):
     return word_list
 
 def get_frequencydictionary(word_list_1, word_list_2):
+    """"""
     freq_dict = {}
 
     for each_word in word_list_1:
@@ -52,6 +55,7 @@ def get_frequencydictionary(word_list_1, word_list_2):
     return freq_dict
 
 def compute_similarity(freq_dict):
+    """"""
     numerator = 0
     den_one = 0
     den_two = 0
@@ -65,13 +69,13 @@ def compute_similarity(freq_dict):
 
     return numerator/denominator
 
-def similarity(d1, d2):
+def similarity(d_1, d_2):
     '''
         Compute the document distance as given in the PDF
     '''
 
-    d1_list = clean_up(d1)
-    d2_list = clean_up(d2)
+    d1_list = clean_up(d_1)
+    d2_list = clean_up(d_2)
 
     d1_list = remove_stop_words(d1_list)
     d2_list = remove_stop_words(d2_list)

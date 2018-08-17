@@ -21,10 +21,10 @@ def word_list(input):
     list_words = clean_up.split(' ')
     list_copy = list_words.copy()
     #print(list_words)
-    for each_word in list_words:
+    for each_word in list_copy:
         if each_word in stop_words:
-            list_copy.remove(each_word)
-    return list_copy
+            list_words.remove(each_word)
+    return list_words
 # input1 = input()
 # print(word_list(input1))
 

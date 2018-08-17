@@ -63,7 +63,7 @@ def similarity(dict1, dict2):
 
         denominator += (math.sqrt((dict_3[each_word][0]) ^ 2)) * (math.sqrt((dict_3[each_word][1]) ^ 2))
 
-    return (numerator/denominator)
+    return (numerator//denominator)
 
 # input1 = input()
 # print(similarity(input1))

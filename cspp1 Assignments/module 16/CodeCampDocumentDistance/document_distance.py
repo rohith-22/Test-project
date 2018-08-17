@@ -36,8 +36,8 @@ def get_frequencydictionary(word_list_1, word_list_2):
                 freq_dict[each_word] = [1, 0]
             else:
                 freq_dict[each_word][0] += 1
-        else:
-            print("Single Char Word 1:", len(each_word), ":END")
+        #else:
+         #   print("Single Char Word 1:", len(each_word), ":END")
 
     #print(word_list_2)
     for each_word in word_list_2:
@@ -46,8 +46,8 @@ def get_frequencydictionary(word_list_1, word_list_2):
                 freq_dict[each_word] = [0, 1]
             else:
                 freq_dict[each_word][1] += 1
-        else:
-            print("Single Char Word 2:", len(each_word), ":END")
+        #else:
+         #   print("Single Char Word 2:", len(each_word), ":END")
 
     return freq_dict
 

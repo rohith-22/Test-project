@@ -19,11 +19,12 @@ def word_list(input):
     clean_up = re.sub("[^ a-z]+", "",lower_case)
     #strip_input = clean_up.strip()
     list_words = clean_up.split(' ')
+    list_copy = list_words.copy()
     #print(list_words)
     for each_word in list_words:
         if each_word in stop_words:
-            list_words.remove(each_word)
-    return list_words
+            list_copy.remove(each_word)
+    return list_copy
 # input1 = input()
 # print(word_list(input1))
 

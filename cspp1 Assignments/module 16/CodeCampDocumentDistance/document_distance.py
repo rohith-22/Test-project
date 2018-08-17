@@ -46,7 +46,7 @@ def similarity(dict1, dict2):
     #print(dictionary_1)
     dictionary_2 = word_dict(dict2)
     dict_3 = {}
-    numerator = 1
+    numerator = 0
     denominator = 1
     for each_word in dictionary_1:
         if each_word not in dict_3:
@@ -61,7 +61,9 @@ def similarity(dict1, dict2):
     for each_word in dict_3:
         numerator += dict_3[each_word][0] * dict_3[each_word][1]
 
-        denominator += (math.sqrt((dict_3[each_word][0]) ^ 2)) * (math.sqrt((dict_3[each_word][1]) ^ 2))
+        sum_1 += (dict_3[each_word][0]) ^ 2
+        sum_2 += (dict_3[each_word][1]) ^ 2
+    denominator = math.sqrt(sum_1) * math.sqrt(sum_2)
 
     return (numerator/denominator)
 

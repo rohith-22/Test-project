@@ -47,7 +47,7 @@ def similarity(dict1, dict2):
     dictionary_2 = word_dict(dict2)
     dict_3 = {}
     numerator = 0
-    denominator = 0
+    denominator = 1
     sum_1 = 0
     sum_2 = 0
     for each_word in dictionary_1:

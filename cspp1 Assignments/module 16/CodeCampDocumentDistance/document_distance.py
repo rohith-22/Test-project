@@ -16,7 +16,7 @@ def load_stopwords(filename):
 def word_list(input):
     stop_words = load_stopwords(filename)
     lower_case = input.lower()
-    clean_up = re.sub("[^ a-z]+", "",lower_case)
+    clean_up = re.sub("[^a-z]+", "",lower_case)
     #strip_input = clean_up.strip()
     list_words = clean_up.split(' ')
     list_copy = list_words.copy()
@@ -60,6 +60,7 @@ def similarity(dict1, dict2):
             dictionary_1[each_word] = 0
         if each_word not in dict_3:
             dict_3[each_word] = [dictionary_1[each_word], dictionary_2[each_word]]
+    print(dict_3)
     for each_word in dict_3:
         numerator += dict_3[each_word][0] * dict_3[each_word][1]
 

@@ -21,7 +21,7 @@ def word_list(input):
     list_words = lower_case.split(' ')
     list_copy = list_words.copy()
     for each_word in list_words:
-        list_words[each_word] = re.sub("[^a-z]", "",each_word)
+        list_words[each_word] = re.sub("[^a-z]", "",list_word[each_word])
 
     list_copy = list_words.copy()
     for each_word in list_copy:

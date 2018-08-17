@@ -63,7 +63,6 @@ def similarity(dict1, dict2):
             dictionary_1[each_word] = 0
         if each_word not in dict_3:
             dict_3[each_word] = [dictionary_1[each_word], dictionary_2[each_word]]
-    print(dict_3)
     for each_word in dict_3:
         numerator += dict_3[each_word][0] * dict_3[each_word][1]
 

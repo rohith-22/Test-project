@@ -16,11 +16,14 @@ def load_stopwords(filename):
 def word_list(input):
     stop_words = load_stopwords(filename)
     lower_case = input.lower()
-    clean_up = re.sub("[^a-z]+", "",lower_case)
+    # clean_up = re.sub("[^a-z]", "",lower_case)
     #strip_input = clean_up.strip()
-    list_words = clean_up.split(' ')
+    list_words = lower_case.split(' ')
     list_copy = list_words.copy()
-    #print(list_words)
+    for each_word in list_words:
+        list_words[each_word] = re.sub("[^a-z]", "",each_word)
+
+    list_copy = list_words.copy()
     for each_word in list_copy:
         if each_word in stop_words:
             list_words.remove(each_word)

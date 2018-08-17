@@ -46,7 +46,7 @@ def similarity(dict1, dict2):
     #print(dictionary_1)
     dictionary_2 = word_dict(dict2)
     dict_3 = {}
-    numerator = 0
+    numerator = 1
     denominator = 1
     for each_word in dictionary_1:
         if each_word not in dict_3:

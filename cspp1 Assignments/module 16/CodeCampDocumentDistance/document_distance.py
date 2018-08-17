@@ -3,7 +3,7 @@
 '''
 import re
 import math
-#filename ="/Users/rohithkumar/Desktop/git/cspp1/Test-project/cspp1 Assignments/module 16/CodeCampDocumentDistance/stopwords.txt"
+filename ="/Users/rohithkumar/Desktop/git/cspp1/Test-project/cspp1 Assignments/module 16/CodeCampDocumentDistance/stopwords.txt"
 def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
@@ -43,9 +43,8 @@ def similarity(dict1, dict2):
         Compute the document distance as given in the PDF
     '''
     dictionary_1 = word_dict(dict1)
-    print(dictionary_1)
+    #print(dictionary_1)
     dictionary_2 = word_dict(dict2)
-    print(dictionary_2)
     dict_3 = {}
     numerator = 0
     denominator = 1

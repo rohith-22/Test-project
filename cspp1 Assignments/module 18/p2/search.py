@@ -54,7 +54,7 @@ def process_queries(search_index, queries):
         print the results returned by search function
     '''
     for each_query in queries:
-        print(search(search_index,each_query))
+        print(search(search_index, each_query))
 
 def main():
     '''
@@ -65,7 +65,6 @@ def main():
 
     # read the number of search queries
     lines = int(input())
-    
     # read the search queries into a list
     queries = []
     for i in range(lines):

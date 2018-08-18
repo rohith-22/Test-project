@@ -23,7 +23,7 @@
 
 # helper function to load the stop words from a file
 import re
-filename = '/Users/rohithkumar/Desktop/git/cspp1/Test-project/cspp1 Assignments/module 18/p1/stopwords.txt'
+
 def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
@@ -42,8 +42,8 @@ def word_list1(word_list):
         return a list of words
     '''
     regex = re.compile('[^a-z]')
-    word_clean = [regex.sub("",word_clean.strip())for word_clean in ((text.lower()).split(" "))]
-    stop_words = load_stopwords(filename)
+    word_clean = [regex.sub("", word_clean.strip())for word_clean in (text.lower()).split(" ")]
+    stop_words = load_stopwords('stopwords.txt')
     word_clean = [i for i in word_clean if i not in stop_words]
     return word_clean
 
@@ -55,9 +55,9 @@ def build_search_index(docs):
     # initialize a search index (an empty dictionary)
     search_dict = {}
     word_list = []
-    
+
     i = 0
-    # iterate through all the docs 
+    # iterate through all the docs
     for line in docs:
         word_list.append(line)
     word_clean = word_list1(word_list)
@@ -65,20 +65,15 @@ def build_search_index(docs):
         if word not in search_dict.keys():
             search_dict[word] = [(i, word.count(word))for i, word in enumerate(word_list) if word in word]
     return search_dict
-
-       
+  
     # keep track of doc_id which is the list index corresponding the document
     # hint: use enumerate to obtain the list index in the for loop
-    
-    
-    
-     
+
         # clean up doc and tokenize to words list
 
         # add or update the words of the doc to the search index
 
     # return search index
-    
 
 # helper function to print the search index
 # use this to verify how the search index looks

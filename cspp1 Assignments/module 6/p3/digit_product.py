@@ -5,6 +5,7 @@ example:
 	output: 6
 '''
 def main():
+    """ main function """
     int_input = int(input())
     int_input_a = int_input
     if int_input < 0:

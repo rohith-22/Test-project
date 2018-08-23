@@ -87,10 +87,10 @@ def main():
     matrix_2 = read_matrix()
     # add matrix 1 and matrix 2
     if matrix_1 == 'Error: Invalid input for the matrix' or matrix_2 == 'Error: Invalid input for the matrix':
-        return None
+        return 'Error: Invalid input for the matrix'
     else:
         print(add_matrix(matrix_1, matrix_2))
     # multiply matrix 1 and matrix 2
-    print(mult_matrix(matrix_1, matrix_2))
+        print(mult_matrix(matrix_1, matrix_2))
 if __name__ == '__main__':
     main()

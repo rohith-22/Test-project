@@ -17,7 +17,7 @@ def mult_matrix(m1, m2):
             for j in range(column_m2):
                 sum_ = 0
                 for l in range(row_m2):
-                    sum_ += int(m1[i][j]) * int(m2[j][l])
+                    sum_ += int(m1[i][j]) * int(m2[l][j])
                 product_row.append(sum_)
             product_of_matrices.append(product_row)
         #print(product_of_matrices)

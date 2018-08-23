@@ -85,7 +85,7 @@ def main():
     # read matrix 2
     matrix_2 = read_matrix()
     # add matrix 1 and matrix 2
-    if matrix_1 == False and matrix_2 == False:
+    if matrix_1 == False or matrix_2 == False:
         return 'Error: Invalid input for the matrix'
     else:
         print(add_matrix(matrix_1, matrix_2))

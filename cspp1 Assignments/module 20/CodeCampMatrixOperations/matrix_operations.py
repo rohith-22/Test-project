@@ -86,6 +86,8 @@ def main():
     # read matrix 2
     matrix_2 = read_matrix()
     # add matrix 1 and matrix 2
+    if matrix_1 == 'Error: Invalid input for the matrix' or matrix_2 == 'Error: Invalid input for the matrix':
+        return None
     print(add_matrix(matrix_1, matrix_2))
     # multiply matrix 1 and matrix 2
     print(mult_matrix(matrix_1, matrix_2))

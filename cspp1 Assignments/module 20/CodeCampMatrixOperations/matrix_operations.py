@@ -1,5 +1,5 @@
 """matrices"""
-def mult_matrix(m1, m2):
+def mult_matrix(m_1, m_2):
     '''
         check if the matrix1 columns = matrix2 rows
         mult the matrices and return the result matrix
@@ -7,18 +7,18 @@ def mult_matrix(m1, m2):
         and return None
         error message should be "Error: Matrix shapes invalid for mult"
     '''
-    row_m1 = len(m1)
-    column_m1 = len(m1[0])
-    row_m2 = len(m2)
-    column_m2 = len(m2[0])
+    row_m_1 = len(m_1)
+    column_m_1 = len(m_1[0])
+    row_m_2 = len(m_2)
+    column_m_2 = len(m_2[0])
     product_of_matrices = []
-    if column_m1 == row_m2:
-        for i in range(row_m1):
+    if column_m_1 == row_m_2:
+        for i in range(row_m_1):
             product_row = []
-            for j in range(column_m2):
+            for j in range(column_m_2):
                 sum_ = 0
-                for l in range(row_m2):
-                    sum_ += int(m1[i][l]) * int(m2[l][j])
+                for l in range(row_m_2):
+                    sum_ += int(m_1[i][l]) * int(m_2[l][j])
                 product_row.append(sum_)
             product_of_matrices.append(product_row)
     else:
@@ -26,7 +26,7 @@ def mult_matrix(m1, m2):
         return None
         #print(product_of_matrices)
     return product_of_matrices
-def add_matrix(m1, m2):
+def add_matrix(m_1, m_2):
     '''
         check if the matrix shapes are similar
         add the matrices and return the result matrix
@@ -34,16 +34,16 @@ def add_matrix(m1, m2):
         and return None
         error message should be "Error: Matrix shapes invalid for addition"
     '''
-    row_m1 = len(m1)
-    column_m1 = len(m1[0])
-    row_m2 = len(m2)
-    column_m2 = len(m2[0])
+    row_m_1 = len(m_1)
+    column_m_1 = len(m_1[0])
+    row_m_2 = len(m_2)
+    column_m_2 = len(m_2[0])
     sum_of_matrices = []
-    if row_m1 == row_m2 and column_m1 == column_m2:
-        for i in range(row_m1):
+    if row_m_1 == row_m_2 and column_m_1 == column_m_2:
+        for i in range(row_m_1):
             sum_rows = []
-            for j in range(column_m1):
-                sum_rows.append(int(m1[i][j]) + int(m2[i][j]))
+            for j in range(column_m_1):
+                sum_rows.append(int(m_1[i][j]) + int(m_2[i][j]))
             sum_of_matrices.append(sum_rows)
         #print(sum_of_matrices)
     else:
@@ -86,7 +86,7 @@ def main():
     # read matrix 2
     matrix_2 = read_matrix()
     # add matrix 1 and matrix 2
-    if matrix_1 == None or matrix_2 == None:
+    if matrix_1 == 'None' or matrix_2 == 'None':
         return 'Error: Invalid input for the matrix'
     else:
         print(add_matrix(matrix_1, matrix_2))

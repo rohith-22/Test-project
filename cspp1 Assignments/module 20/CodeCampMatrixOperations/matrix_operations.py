@@ -1,3 +1,4 @@
+"""matrices"""
 def mult_matrix(m1, m2):
     '''
         check if the matrix1 columns = matrix2 rows
@@ -17,9 +18,12 @@ def mult_matrix(m1, m2):
             for j in range(column_m2):
                 sum_ = 0
                 for l in range(row_m2):
-                    sum_ += int(m1[i][j]) * int(m2[l][j])
+                    sum_ += int(m1[i][l]) * int(m2[l][j])
                 product_row.append(sum_)
             product_of_matrices.append(product_row)
+    else:
+        print("Error: Matrix shapes invalid for mult")
+        return None
         #print(product_of_matrices)
     return product_of_matrices
 def add_matrix(m1, m2):
@@ -55,7 +59,6 @@ def read_matrix():
         print an error message and return None
         error message should be "Error: Invalid input for the matrix"
     '''
-    
     #print('enter matrix')
     input_length = input()
     rows = int(input_length[0])
@@ -77,8 +80,8 @@ def read_matrix():
     return matrix_list
 
 def main():
+    """ main function """
     # read matrix 1
-    
     matrix_1 = read_matrix()
     # read matrix 2
     matrix_2 = read_matrix()

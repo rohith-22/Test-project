@@ -23,7 +23,7 @@ def mult_matrix(m_1, m_2):
             product_of_matrices.append(product_row)
     else:
         print("Error: Matrix shapes invalid for mult")
-        #print(product_of_matrices)
+        return None
     return product_of_matrices
 def add_matrix(m_1, m_2):
     '''
@@ -47,7 +47,7 @@ def add_matrix(m_1, m_2):
         #print(sum_of_matrices)
     else:
         print("Error: Matrix shapes invalid for addition")
-        return Nones
+        return None
     return sum_of_matrices
 
 def read_matrix():
@@ -74,7 +74,7 @@ def read_matrix():
             i = i+1
         else:
             print('Error: Invalid input for the matrix')
-            return None
+            return False
             break
     return matrix_list
 

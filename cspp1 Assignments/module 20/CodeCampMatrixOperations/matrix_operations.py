@@ -75,8 +75,8 @@ def read_matrix():
             i = i+1
         else:
             print('Error: Invalid input for the matrix')
-            break
             return None
+            break
     return matrix_list
 
 def main():

@@ -1,5 +1,6 @@
 
 def lr_rl_diagonal(matrix, pattern):
+    """diagonal"""
     count_x = 0
     count_o = 0
     j = num_rows - 1
@@ -22,12 +23,11 @@ def lr_rl_diagonal(matrix, pattern):
     elif count_o == 3:
         # print('o')
         return (True, 'o')
-    else:
-        return (False, 'draw')
+    return (False, 'draw')
 
 
 def hz_vt_winner(matrix, patter):
-    # print(matrix)
+    """ vertical and horizontal """ 
     flag_x = False
     flag_o = False
     for i in range(num_rows):
@@ -56,11 +56,11 @@ def hz_vt_winner(matrix, patter):
     elif flag_o:
         # print('o')
         return (True, 'o')
-    else:
         # print('draw')
-        return (False, 'draw')
+    return (False, 'draw')
 
 def game_validation(matrix):
+    """count"""
     count_x = 0
     count_o = 0
 
@@ -77,6 +77,7 @@ def game_validation(matrix):
 
 
 def data_validation(matrix):
+    """ data """
     valid_data = ['x', 'o', '.']
     for i in matrix:
         for j in i:
@@ -85,6 +86,7 @@ def data_validation(matrix):
     return True
 
 def main():
+    """main"""
     global num_rows
     num_rows = 3
     matrix = []

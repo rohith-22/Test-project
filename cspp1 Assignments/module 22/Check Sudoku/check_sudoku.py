@@ -13,7 +13,24 @@ def check_sudoku(sudoku):
         Your solution goes here. You may add other helper functions as needed.
         The function has to return True for a valid sudoku grid and false otherwise
     '''
-    pass
+    # sudoku_a = []
+    for each in sudoku:
+        for each_element in each:
+            if int(each_element) > 9:
+                return False
+    for each in sudoku:
+        if each.count(each_element) > 1:
+            return False
+    for i in range(9):
+        sudoku_column = []
+        for j in range(9):
+            sudoku_column.append(sudoku[i][j])
+            for each in sudoku_column:
+                if each.count(each_element) > 1:
+                    return False
+    return True
+
+
 
 def main():
     '''

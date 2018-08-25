@@ -42,7 +42,7 @@ def word_list1(word_list):
         return a list of words
     '''
     regex = re.compile('[^a-z]')
-    word_clean = [regex.sub("", word_clean.strip())for word_clean in (text.lower()).split(" ")]
+    word_clean = [regex.sub("", word_clean.strip())for word_clean in text.lower().split(" ")]
     stop_words = load_stopwords('stopwords.txt')
     word_clean = [i for i in word_clean if i not in stop_words]
     return word_clean
@@ -56,14 +56,12 @@ def build_search_index(docs):
     search_dict = {}
     word_list = []
 
-    i = 0
     # iterate through all the docs
     for line in docs:
-        word_list.append(line)
-    word_clean = word_list1(word_list)
+        word_list.append(w_list(line))
     for word in word_clean:
         if word not in search_dict.keys():
-            search_dict[word] = [(i, word.count(word))for i, word in enumerate(word_list) if word in word]
+            search_dict[word] = [(i, w.count(word))for i, w in enumerate(word_list) if word in w]
     return search_dict
   
     # keep track of doc_id which is the list index corresponding the document

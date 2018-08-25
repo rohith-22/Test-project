@@ -64,7 +64,6 @@ def build_search_index(docs):
             if element not in search_dict.keys():
                 search_dict[element] = [(i, w.count(element))for i, w in enumerate(word_list) if element in w]
     return search_dict
-  
     # keep track of doc_id which is the list index corresponding the document
     # hint: use enumerate to obtain the list index in the for loop
 

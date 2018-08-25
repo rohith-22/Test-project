@@ -58,7 +58,7 @@ def build_search_index(docs):
 
     # iterate through all the docs
     for line in docs:
-        word_list.append(w_list(line))
+        word_list.append(word_list1(line))
     for word in word_clean:
         if word not in search_dict.keys():
             search_dict[word] = [(i, w.count(word))for i, w in enumerate(word_list) if word in w]

@@ -7,7 +7,7 @@ def tokenize(string):
     s_dict = {}
     s_list = string.split(' ')
     for each_element in s_list:
-        each_element = re.sub('[^a-zA-Z]',"",each_element)
+        each_element = re.sub('[^a-zA-Z0-9]',"",each_element)
         if each_element in s_dict:
             s_dict[each_element] += 1
         else:

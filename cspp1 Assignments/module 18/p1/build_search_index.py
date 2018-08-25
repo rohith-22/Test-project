@@ -35,7 +35,7 @@ def load_stopwords(filename):
     return stopwords
 
 
-def word_list1(word_list):
+def word_list1(text):
     '''
         Change case to lower and split the words using a SPACE
         Clean up the text by remvoing all the non alphabet characters

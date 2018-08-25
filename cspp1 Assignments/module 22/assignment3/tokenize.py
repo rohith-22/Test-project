@@ -4,10 +4,23 @@ each word
 '''
 
 def tokenize(string):
-    pass
-            
+    s_dict = {}
+    s_list = string.split(' ')
+    for each_element in s_list:
+        if each_element in s_dict:
+            s_dict[each_element] += 1
+        else:
+            s_dict[each_element] = 1
+    return s_dict
 def main():
-    pass
+    input_n = int(input())
+    string = ""
+    for i in range(input_n):
+        if string == '':
+            string += input()
+        else:
+            string += ' ' + input()
+    print(tokenize(string))
 
 if __name__ == '__main__':
     main()

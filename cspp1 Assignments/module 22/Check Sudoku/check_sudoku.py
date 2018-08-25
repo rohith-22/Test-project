@@ -44,7 +44,7 @@ def check_sudoku(sudoku):
         for each in sub_sudoku_1:
             if sub_sudoku_1.count(each) > 1:
                 return False
-        for j in range(3 ,6):
+        for j in range(3, 6):
             sub_sudoku_2.append(sudoku[i][j])
         for each in sub_sudoku_2:
             if sub_sudoku_2.count(each) > 1:
@@ -54,13 +54,13 @@ def check_sudoku(sudoku):
         for each in sub_sudoku_3:
             if sub_sudoku_3.count(each) > 1:
                 return False
-    for i in range(3,6):
+    for i in range(3, 6):
         for j in range(3):
             sub_sudoku_4.append(sudoku[i][j])
         for each in sub_sudoku_4:
             if sub_sudoku_4.count(each) > 1:
                 return False
-        for j in range(3 ,6):
+        for j in range(3, 6):
             sub_sudoku_5.append(sudoku[i][j])
         for each in sub_sudoku_5:
             if sub_sudoku_5.count(each) > 1:
@@ -70,13 +70,13 @@ def check_sudoku(sudoku):
         for each in sub_sudoku_6:
             if sub_sudoku_6.count(each) > 1:
                 return False
-    for i in range(6,9):
+    for i in range(6, 9):
         for j in range(3):
             sub_sudoku_7.append(sudoku[i][j])
         for each in sub_sudoku_7:
             if sub_sudoku_7.count(each) > 1:
                 return False
-        for j in range(3 ,6):
+        for j in range(3, 6):
             sub_sudoku_8.append(sudoku[i][j])
         for each in sub_sudoku_8:
             if sub_sudoku_8.count(each) > 1:
@@ -94,7 +94,6 @@ def main():
         main function to read input sudoku from console
         call check_sudoku function and print the result to console
     '''
-    
     # initialize empty list
     sudoku = []
 

@@ -4,16 +4,18 @@ each word
 '''
 import re
 def tokenize(string):
+    """  tokenize """
     s_dict = {}
     s_list = string.split(' ')
     for each_element in s_list:
-        each_element = re.sub('[^a-zA-Z0-9]',"",each_element)
+        each_element = re.sub('[^a-zA-Z0-9]', "", each_element)
         if each_element in s_dict:
             s_dict[each_element] += 1
         else:
             s_dict[each_element] = 1
     return s_dict
 def main():
+    """ input"""
     input_n = int(input())
     string = ""
     for i in range(input_n):

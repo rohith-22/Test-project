@@ -74,7 +74,7 @@ def check_sudoku(sudoku):
         for j in range(3):
             sub_sudoku_7.append(sudoku[i][j])
         for each in sub_sudoku_7:
-            if sub_sudoku_1.count(each) > 1:
+            if sub_sudoku_7.count(each) > 1:
                 return False
         for j in range(3 ,6):
             sub_sudoku_8.append(sudoku[i][j])
